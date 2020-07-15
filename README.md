@@ -2,7 +2,7 @@
 simple Tic-Tac-Toe game using Python
 
 Some features used in this game are:-
-1. out of two players random player get chance to play first
+1. out of two players random player get chance to play first.
 2.players have option to chose which marker they want 'X' or 'O'
 
 Things to known before playing:-
