@@ -1,10 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 from IPython.display import clear_output
+
+#function to choose between 'X' or 'O'
 def choiceOfMarker():
     marker=''
     
@@ -17,9 +14,7 @@ def choiceOfMarker():
         return('O','X')
 
 
-# In[2]:
-
-
+#Randomly selects either of two players to play first
 def choiceOfPlay():
     if random.randint(0,1)==0:
         return 'player_1'
@@ -27,9 +22,7 @@ def choiceOfPlay():
         return 'player_2'
 
 
-# In[3]:
-
-
+# display
 def displayBoard(board):
     clear_output()
     
@@ -47,9 +40,7 @@ def displayBoard(board):
     
 
 
-# In[4]:
-
-
+# where in the board do you want to mark your next move
 def choiceOfPosition(board):
     position=0
     
@@ -59,23 +50,17 @@ def choiceOfPosition(board):
     return position    
 
 
-# In[5]:
-
-
+#checks if selected position has empty space
 def spaceAvailable(board,position):
     return board[position]==' '
 
 
-# In[6]:
-
-
+#marks your marker on selected postion on board
 def placeMarker(board,position,marker):
     board[position]=marker
 
 
-# In[7]:
-
-
+#checks if game is won
 def winCheck(board,mark):
     return ((board[7] == mark and board[8] == mark and board[9] == mark) or # across the top
     (board[4] == mark and board[5] == mark and board[6] == mark) or # across the middle
@@ -87,9 +72,7 @@ def winCheck(board,mark):
     (board[9] == mark and board[5] == mark and board[1] == mark)) # diagonal
 
 
-# In[8]:
-
-
+#checks if the game is tie
 def fullBoardCheck(board):
     for i in range(1,10):
         if spaceAvailable(board,i):
@@ -98,16 +81,12 @@ def fullBoardCheck(board):
     return True
 
 
-# In[9]:
-
-
+#asks for a replay
 def replay():
     result=input("Play one more game(Y/N)").upper()
     
     return result=='Y'
 
-
-# In[ ]:
 
 
 #main block to run
